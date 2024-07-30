@@ -1,0 +1,95 @@
+#wrapper {
+    font-size: 15px;
+    color: deeppink;
+}
+
+.line {
+    margin-bottom: 10px;
+    max-width: 500px;
+    border: 1px solid aqua;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+input {
+    border-radius: 5px;
+}
+
+textarea {
+    border-radius: 5px;
+}
+
+label {
+    display: inline-block;
+    width: 75px;
+}
+
+button {
+    margin: 10px;
+    background-color: deeppink;
+    color: white;
+    cursor: pointer;
+}
+
+h3 {
+    margin-left: 25px;
+    color: deeppink;
+}
+
+.alert {
+    margin-left: 10px;
+    color: white;
+}
+
+.songs {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.song,
+.card {
+    position: relative;
+    width: 175px;
+    color: aqua;
+    margin: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    transition: transform 0.5s ease, border-color 0.5s ease;
+    ;
+}
+
+.song:hover,
+.card:hover {
+    transform: scale(1.10);
+    border: 1px solid aqua;
+}
+
+p {
+    margin: 5px;
+}
+
+strong {
+    color: white;
+}
+
+img {
+    margin: 5px;
+    width: 150px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    .song,
+    .card {
+        width: 100px;
+    }
+
+    img {
+        width: 80px;
+    }
+}

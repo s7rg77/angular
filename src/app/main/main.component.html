@@ -1,0 +1,50 @@
+<div id="wrapper">
+  <div class="line">
+    <form [formGroup]="miForm" (ngSubmit)="enviar()">
+      <div class="form-group">
+        <label for="cancion">canción</label>
+        <input type="text" formControlName="cancion" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="autor">autor</label>
+        <input type="text" formControlName="autor" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="formato">formato</label>
+        <select formControlName="formato" class="form-control">
+          <option value="mp3">mp3</option>
+          <option value="wav">wav</option>
+          <option value="ogg">ogg</option>
+          <option value="aac">aac</option>
+          <option value="flac">flac</option>
+          <option value="wma">wma</option>
+        </select>
+      </div>
+      <div class="btn">
+        <button type="submit" [disabled]="miForm.invalid">agregar canción</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="comprobarcancion()" class="alert">
+    introduce canción correcta
+  </div>
+  <div *ngIf="comprobarautor()" class="alert">
+    introduce autor correcto
+  </div>
+  <div *ngIf="comprobarformato()" class="alert">
+    selecciona formato
+  </div>
+  <div class="songs">
+    <div *ngFor="let item of datosMusicales" class="card">
+      <img [src]="item.urlImagenAutor" alt="{{item.cancion}}" class="card-image">
+      <p><strong>canción:</strong> {{ item.cancion }}</p>
+      <p><strong>autor:</strong> {{ item.autor }}</p>
+      <p><strong>formato:</strong> {{ item.formato }}</p>
+    </div>
+    <div *ngFor="let song of songs" class="song">
+      <p><strong>canción:</strong> {{ song.cancion }}</p>
+      <p><strong>autor:</strong> {{ song.autor }}</p>
+      <p><strong>formato:</strong> {{ song.formato }}</p>
+    </div>
+  </div>
+</div>
